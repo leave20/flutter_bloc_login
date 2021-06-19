@@ -14,11 +14,16 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: BlocProvider(
-        builder: (_) => LoginBlocBloc(
-          logic: SimpleLoginLogic(),
-        ),
-        child: MyHomePage(title: 'Flutter Demo Home Page'),
+        create: (BuildContext context) => LoginBloc(
+            logic: SimpleLoginLogic()),
+        child: HomePage(),
       ),
+      //home: BlocProvider(
+      //builder: (_) => LoginBlocBloc(
+      // logic: SimpleLoginLogic(),
+      //),
+      //child: MyHomePage(title: 'Flutter Demo Home Page'),
+      //),
     );
   }
 }
